@@ -1,0 +1,20 @@
+
+<div *ngFor="let recipe of recipes">
+
+
+  <h1>{{ recipe.title }}</h1>
+  <button *ngIf="!recipe.showDetails" (click)="recipe.toggleDetails()">See Details</button>
+  <button *ngIf="recipe.showDetails"(click)="recipe.toggleDetails()">Hide Details</button>
+
+
+  <div *ngIf="recipe.showDetails">
+
+    <h2>Ingredients</h2>
+    <ul><li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li></ul>
+
+    <h2>Directions</h2>
+    <ol><li *ngFor="let direction of recipe.directions">{{ direction }}</li></ol>
+
+  </div>
+
+</div>
